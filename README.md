@@ -16,34 +16,22 @@ The main question — *where should an investor buy property for rental income?*
 - Average rental revenue by country
 - Average nightly rate
 - Booking counts by country and year
-- Years to Break-Even Point (BEP) for cash purchases — Investment ÷ annual cash flow (no debt service ratio, since no financing is involved)
-
-**Answers:** Where does invested capital generate the highest return relative to property cost, and how long until it pays for itself?
+- Years to Break-Even Point (BEP) for cash purchases — Investment ÷ annual cash flow
 
 ### 2. Tenant behavior and retention
 - Average rental duration by country and bookings per year
-- Booking growth/decline trend across countries, filterable per country
-
-**Answers:** Is rental demand stable and predictable, or is the market shrinking?
+- Average bookings per property
 
 ### 3. Demand and seasonality
-- Booking volume during peak season, by country
-- Total bookings by season, across all countries
-
-**Answers:** Is income spread evenly across the year, or concentrated in a few months with long vacancy periods?
+- Booking volume by season, per country
+- Each season's share of a country's bookings
 
 ### 4. Property market
-- Property price trend — growth or stagnation over 2023–2025 (OECD, 13 countries)
-- Average price per square meter in city centre, by country
-- Property supply growth — number of listed properties per country and year
-
-**Answers:** Beyond rental income, can the investor expect capital appreciation — and is the market getting more crowded?
+- Current price per m² in city centre, by country
+- Property supply growth per country and year
 
 ### 5. Final recommendation
-- Country-level recommendation for buying rental property, weighing profitability, demand stability and price trend
-- Investment and financing scenarios built on the metrics above
-
-**Answers:** Given everything, where should the money go — and under what terms?
+- Country-level ranking combining cost, demand and break-even
 
 ---
 
@@ -51,12 +39,76 @@ The main question — *where should an investor buy property for rental income?*
 
 | Source | Content | Coverage |
 |---|---|---|
-| `samples.wanderbricks` | Bookings, properties, hosts, reviews — the platform's operational data | 18 countries, 2023–2025 |
-| OECD SDMX API | Real house price index (2015 = 100), quarterly | 13 of 18 countries |
+| `samples.wanderbricks` | Bookings, properties, hosts — the platform's operational data | 18 countries, 2023–2025 |
+| OECD SDMX API | Real house price index | 13 of 18 countries |
 | Numbeo | Current price per m² to buy an apartment in city centre (EUR) | All 18 countries |
 
-## Known limitations
+---
 
-- OECD data covers only member and partner economies — Thailand, Egypt, China, UAE and Singapore are missing
-- Numbeo provides a current snapshot, not a historical series, so absolute prices are static across years
-- The WanderBricks dataset is synthetic; several findings (uniform revenue across countries, ~1.5 bookings per property) are artifacts of data generation rather than market signals
+## Gold tables
+
+| Table | Description |
+|---|---|
+| `gold_host_performance` | Host activity: properties, bookings and revenue per host (2024 onwards) |
+| `gold_bookings_by_year` | Booking counts per year — used to scope the property price data |
+| `gold_revenue_and_pricing_by_country` | Revenue per property, nightly rate and booking counts by country and year |
+| `gold_rental_duration_and_trends` | Average rental duration and booking growth by country and year |
+| `gold_seasonal_demand` | Booking counts by season, per country and overall |
+| `gold_real_estate_market` | House price index (OECD) and price per m² (Numbeo) |
+| `gold_avg_revenue_per_booking_by_property` | Average revenue per booking, by individual property |
+| `gold_avg_bookings_per_property` | Average booking volume per property — daily, weekly, monthly |
+| `gold_break_even_point` | Years to recover a cash property purchase (70 m² assumption) |
+| `gold_property_supply_growth` | Listed properties per country and year, with growth rate |
+
+---
+
+## Dashboard
+
+**Page 1 — Host Performance**
+Activity concentrates in a handful of markets. The US has the most hosts (554), but Spain leads on bookings and revenue (€11M) with only 205 hosts.
+
+**Page 2 — Profitability**
+Revenue per property lands between €540 and €820 across all 18 countries. Booking volume varies far more than revenue does.
+
+**Page 3 — Tenant Behavior**
+Rental duration sits at 3.3–4.2 nights everywhere, and each property averages 1.3 bookings. Platform bookings grew from near zero to 15K over three years.
+
+**Page 4 — Seasonality**
+Summer dominates almost universally — Spain books 78% of its year in one season. UAE and Japan spread demand more evenly.
+
+**Page 5 — Property Market**
+Property cost varies 30×, from €756/m² in Egypt to €23,344/m² in Singapore. Supply roughly doubled each year in every market.
+
+**Page 6 — Recommendation**
+Egypt and India offer the fastest payback on cost alone, but with thin booking volume. Spain and Thailand combine mid-range prices with the strongest demand.
+
+---
+
+## Important: working with synthetic data
+
+The WanderBricks dataset is synthetic. Several patterns in the results are artifacts of data generation rather than market signals, and the analysis is presented with that in mind.
+
+**What the data shows:**
+
+- Each property records ~1.3 bookings across the entire 2023–2025 period, producing annual cash flow near €700 instead of the €10,000–30,000 a real rental would generate
+- Revenue per booking sits between €539 and €575 across all 18 countries — a 6% spread, where real markets differ by an order of magnitude
+- Break-even figures therefore run 3–100× longer than reality: 73 years for Egypt, 2,567 for Switzerland, against a realistic 15–30 years
+- Booking growth from 2023 to 2025 reflects platform adoption, not market expansion
+
+**What remains valid:**
+
+Relative rankings between countries. Every market is distorted the same way, so the ordering — which countries offer better cost-to-income ratios, stronger demand, or higher vacancy risk — still holds. Absolute figures do not.
+
+**Additional assumptions:**
+
+- Property value is estimated as 70 m² × price per m², since the dataset has no property size field
+- Numbeo provides a current snapshot, not a historical series, so property prices are static across years
+- Rental income derives from short-term booking data, while property prices reflect long-term purchase values
+
+---
+
+## Repository contents
+
+- `investor_questions_analysis_2026_v01-Git.ipynb` — Databricks notebook with all SQL and Python queries
+- `wanderbricks_investor_analysis.pbix` — Power BI dashboard
+- `README.md` — this file
