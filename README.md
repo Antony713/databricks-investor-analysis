@@ -47,7 +47,7 @@ Built on the WanderBricks rental platform dataset — 18 countries, ~16,000 prop
 
 **Host Performance**
 
-![Host Performance](screenshots/host-performance.png)
+![Host Performance](screenshots/host-performance.jpg)
 
 The US has the most hosts (554), but Spain leads on bookings and revenue (€11M) with only 205.
 
@@ -55,7 +55,7 @@ The US has the most hosts (554), but Spain leads on bookings and revenue (€11M
 
 **Profitability**
 
-![Profitability](screenshots/profitability.png)
+![Profitability](screenshots/profitability.jpg)
 
 Revenue per property lands between €540 and €820 across all 18 countries. Booking volume varies far more than revenue does.
 
@@ -63,7 +63,7 @@ Revenue per property lands between €540 and €820 across all 18 countries. Bo
 
 **Tenant Behavior**
 
-![Tenant Behavior](screenshots/tenant-behavior.png)
+![Tenant Behavior](screenshots/tenant-behavior.jpg)
 
 Rental duration sits at 3.3–4.2 nights everywhere, and each property averages 1.3 bookings.
 
@@ -71,7 +71,7 @@ Rental duration sits at 3.3–4.2 nights everywhere, and each property averages 
 
 **Seasonality**
 
-![Seasonality](screenshots/seasonality.png)
+![Seasonality](screenshots/seasonality.jpg)
 
 Summer dominates almost universally — Spain books 78% of its year in one season. UAE and Japan spread demand more evenly.
 
@@ -79,7 +79,7 @@ Summer dominates almost universally — Spain books 78% of its year in one seaso
 
 **Property Market**
 
-![Property Market](screenshots/rroperty-market.png)
+![Property Market](screenshots/property-market.jpg)
 
 Property cost varies 30×, from €756/m² in Egypt to €23,344/m² in Singapore. Supply roughly doubled each year.
 
@@ -87,10 +87,9 @@ Property cost varies 30×, from €756/m² in Egypt to €23,344/m² in Singapor
 
 **Recommendation**
 
-![Recommendation](screenshots/recommendation.png)
+![Recommendation](screenshots/recommendation.jpg)
 
 Egypt and India offer the fastest payback on cost alone, but with thin booking volume. Spain and Thailand combine mid-range prices with the strongest demand.
-
 ---
 
 ## Working with synthetic data
