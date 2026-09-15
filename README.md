@@ -65,21 +65,49 @@ The main question — *where should an investor buy property for rental income?*
 ## Dashboard
 
 **Page 1 — Host Performance**
+
+![Host Performance](screenshots/Host%20Performance.png)
+
 Activity concentrates in a handful of markets. The US has the most hosts (554), but Spain leads on bookings and revenue (€11M) with only 205 hosts.
 
+---
+
 **Page 2 — Profitability**
+
+![Profitability](screenshots/Profitability.png)
+
 Revenue per property lands between €540 and €820 across all 18 countries. Booking volume varies far more than revenue does.
 
+---
+
 **Page 3 — Tenant Behavior**
+
+![Tenant Behavior](screenshots/Tenant%20Behavior.png)
+
 Rental duration sits at 3.3–4.2 nights everywhere, and each property averages 1.3 bookings. Platform bookings grew from near zero to 15K over three years.
 
+---
+
 **Page 4 — Seasonality**
+
+![Seasonality](screenshots/Seasonality.png)
+
 Summer dominates almost universally — Spain books 78% of its year in one season. UAE and Japan spread demand more evenly.
 
+---
+
 **Page 5 — Property Market**
+
+![Property Market](screenshots/Property%20Market.png)
+
 Property cost varies 30×, from €756/m² in Egypt to €23,344/m² in Singapore. Supply roughly doubled each year in every market.
 
+---
+
 **Page 6 — Recommendation**
+
+![Recommendation](screenshots/Recommendation.png)
+
 Egypt and India offer the fastest payback on cost alone, but with thin booking volume. Spain and Thailand combine mid-range prices with the strongest demand.
 
 ---
